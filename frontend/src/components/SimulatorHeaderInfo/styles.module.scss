@@ -1,0 +1,16 @@
+.simulatorHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 12.5rem;
+
+  img {
+    height: 1.1rem;
+    transition: 0s all;
+
+    &:hover {
+      cursor: help;
+      transition-delay: 5s;
+    }
+  }
+}

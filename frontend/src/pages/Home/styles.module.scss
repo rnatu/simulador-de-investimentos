@@ -10,5 +10,14 @@
         font-weight: 700;
       }
     }
+
+    main {
+      display: flex;
+
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      border: 1px solid red;
+    }
   }
 }

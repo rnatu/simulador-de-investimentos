@@ -1,3 +1,4 @@
+import { SimulatorCard } from '../../components/SimulatorCard';
 import styles from './styles.module.scss';
 
 export function Home() {
@@ -9,9 +10,11 @@ export function Home() {
         </header>
 
         <main>
-          <h2>Simulador</h2>
+          <SimulatorCard />
 
-          <h2>Resultado da Simulação</h2>
+          <div>
+            <h2>Resultado da Simulação</h2>
+          </div>
         </main>
       </div>
     </div>
