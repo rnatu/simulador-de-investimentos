@@ -1,0 +1,14 @@
+.homeContainer {
+  padding: 2rem;
+  .homeContent {
+    background-color: #efefef;
+    padding: 2rem;
+
+    header {
+      text-align: center;
+      h1 {
+        font-weight: 700;
+      }
+    }
+  }
+}
