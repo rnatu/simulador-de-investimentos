@@ -1,23 +1,21 @@
-.homeContainer {
+.homePage {
   padding: 2rem;
-  .homeContent {
+
+  .homeContainer {
     background-color: #efefef;
     padding: 2rem;
 
-    header {
+    .homeHeader {
       text-align: center;
       h1 {
         font-weight: 700;
       }
     }
 
-    main {
+    .homeContent {
+      margin-top: 4rem;
       display: flex;
-
-      flex-wrap: wrap;
-      gap: 2rem;
-
-      border: 1px solid red;
+      gap: 3rem;
     }
   }
 }

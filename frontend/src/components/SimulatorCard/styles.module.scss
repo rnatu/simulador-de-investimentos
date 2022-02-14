@@ -1,14 +1,36 @@
 .simulatorContainer {
-  width: 40%;
-  max-width: 550px;
+  border: 1px solid purple;
+  width: fit-content;
+
+  h2 {
+    font-weight: 700;
+  }
 
   .simulatorContent {
     margin-top: 1rem;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .incomeSection {
+      border: 1px solid red;
+    }
+
+    .indexingTypes {
+      border: 1px solid red;
+    }
+
+    .incomeButtonSection {
+      margin-top: 1rem;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid black;
+      border-radius: 8px;
+      overflow: hidden;
+    }
   }
 }

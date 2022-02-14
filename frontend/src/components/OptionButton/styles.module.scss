@@ -1,0 +1,7 @@
+.optionButton {
+  padding: 0.5rem;
+  width: 100%;
+  & + .optionButton {
+    border-left: 2.5px solid black;
+  }
+}

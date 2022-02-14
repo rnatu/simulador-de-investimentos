@@ -3,13 +3,13 @@ import styles from './styles.module.scss';
 
 export function Home() {
   return (
-    <div className={styles.homeContainer}>
-      <div className={styles.homeContent}>
-        <header>
+    <div className={styles.homePage}>
+      <div className={styles.homeContainer}>
+        <header className={styles.homeHeader}>
           <h1>Simulador de Investimentos</h1>
         </header>
 
-        <main>
+        <main className={styles.homeContent}>
           <SimulatorCard />
 
           <div>
