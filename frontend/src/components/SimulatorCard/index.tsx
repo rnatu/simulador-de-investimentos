@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from 'react';
-import { OptionButton } from '../OptionButton';
-import { SimulatorHeaderInfo } from '../SimulatorHeaderInfo';
+import { Input } from '../input';
 import { SimulatorOptions } from '../SimulatorOptions';
 import styles from './styles.module.scss';
 
@@ -10,20 +7,36 @@ export function SimulatorCard() {
     <div className={styles.simulatorContainer}>
       <h2>Simulador</h2>
       <div className={styles.simulatorContent}>
-        <div className={styles.incomeSection}>
+        <div>
           <SimulatorOptions
             title="Rendimento"
-            buttonText={['Bruto', 'Líquido']}
+            buttonsText={['Bruto', 'Líquido']}
             defaultButton="Bruto"
           />
+
+          <div className={styles.inputForm}>
+            <Input inputName="Aporte Inicial" />
+
+            <Input inputName="Prazo (em meses)" />
+
+            <Input inputName="IPCA (ao ano)" />
+          </div>
         </div>
 
-        <div className={styles.indexingTypes}>
+        <div>
           <SimulatorOptions
             title="Tipos de indexação"
-            buttonText={['PRÉ', 'POS', 'FIXADO']}
+            buttonsText={['PRÉ', 'POS', 'FIXADO']}
             defaultButton="POS"
           />
+
+          <div className={styles.inputForm}>
+            <Input inputName="Aporte Mensal" />
+
+            <Input inputName="Rentabilidade" />
+
+            <Input inputName="CDI (ao ano)" />
+          </div>
         </div>
       </div>
     </div>

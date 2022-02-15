@@ -1,0 +1,30 @@
+label {
+  input {
+    width: 100%;
+
+    border: none;
+    background: none;
+
+    margin-top: 1rem;
+    border-bottom: 1px solid black;
+
+    line-height: 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.error {
+  input {
+    border-color: red;
+  }
+
+  &::after {
+    margin-top: 0.5rem;
+    display: block;
+    color: red;
+    content: attr(content-text);
+    font-size: 0.8rem;
+  }
+}

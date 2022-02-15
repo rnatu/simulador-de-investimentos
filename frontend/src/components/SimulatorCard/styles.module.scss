@@ -1,5 +1,4 @@
 .simulatorContainer {
-  // border: 1px solid purple;
   width: fit-content;
 
   h2 {
@@ -13,24 +12,18 @@
     gap: 4rem;
     flex-wrap: wrap;
 
-    .incomeSection {
-      // border: 1px solid red;
+    > div {
+      flex: 1;
+      min-width: 130px;
     }
+  }
 
-    .indexingTypes {
-      // border: 1px solid red;
-    }
+  .inputForm {
+    margin-top: 2.5rem;
 
-    .incomeButtonSection {
-      margin-top: 1rem;
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid black;
-      border-radius: 8px;
-      overflow: hidden;
+    label + label {
+      display: block;
+      margin-top: 2rem;
     }
   }
 }

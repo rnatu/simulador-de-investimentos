@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import { OptionButton } from '../OptionButton';
+import { OptionButton } from '../OptionButtons';
 import { SimulatorHeaderInfo } from '../SimulatorHeaderInfo';
 import styles from './styles.module.scss';
 
 interface SimulatorOptionsType {
   title: string;
-  buttonText: Array<string>;
+  buttonsText: Array<string>;
   defaultButton: string;
 }
 
 export function SimulatorOptions({
   title,
-  buttonText,
+  buttonsText,
   defaultButton,
 }: SimulatorOptionsType) {
   const [buttonActive, setButtonActive] = useState<string>(defaultButton);
@@ -30,7 +30,7 @@ export function SimulatorOptions({
       </div>
 
       <div className={styles.incomeButtonSection}>
-        {buttonText.map((button) => (
+        {buttonsText.map((button) => (
           <OptionButton
             key={button}
             text={button}
