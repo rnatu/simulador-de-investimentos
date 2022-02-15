@@ -1,7 +1,15 @@
 .optionButton {
-  padding: 0.5rem;
+  padding: 0.8rem 0rem;
   width: 100%;
+
+  font-size: 0.9rem;
+
   & + .optionButton {
     border-left: 2.5px solid black;
   }
+}
+
+.active {
+  color: #fdf7f2;
+  background-color: #ed8e53;
 }

@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from 'react';
 import { OptionButton } from '../OptionButton';
 import { SimulatorHeaderInfo } from '../SimulatorHeaderInfo';
+import { SimulatorOptions } from '../SimulatorOptions';
 import styles from './styles.module.scss';
 
 export function SimulatorCard() {
@@ -8,28 +11,19 @@ export function SimulatorCard() {
       <h2>Simulador</h2>
       <div className={styles.simulatorContent}>
         <div className={styles.incomeSection}>
-          <div>
-            <SimulatorHeaderInfo title="Rendimento" hoverInfoMsg="test" />
-          </div>
-
-          <div className={styles.incomeButtonSection}>
-            <OptionButton text="Bruto" />
-            <OptionButton text="Líquido" />
-          </div>
+          <SimulatorOptions
+            title="Rendimento"
+            buttonText={['Bruto', 'Líquido']}
+            defaultButton="Bruto"
+          />
         </div>
 
         <div className={styles.indexingTypes}>
-          <div>
-            <SimulatorHeaderInfo
-              title="Tipos de indexação"
-              hoverInfoMsg="test"
-            />
-          </div>
-          <div className={styles.incomeButtonSection}>
-            <OptionButton text="PRÉ" />
-            <OptionButton text="POS" />
-            <OptionButton text="FIXADO" />
-          </div>
+          <SimulatorOptions
+            title="Tipos de indexação"
+            buttonText={['PRÉ', 'POS', 'FIXADO']}
+            defaultButton="POS"
+          />
         </div>
       </div>
     </div>
