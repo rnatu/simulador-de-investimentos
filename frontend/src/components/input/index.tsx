@@ -3,43 +3,44 @@ import styles from './styles.module.scss';
 
 interface InputType {
   inputName: string;
-  inputStateFunction: (value: string) => void;
+  handleInputChange: (inputName: string, inputValue: string) => void;
   inputStateValue: string;
 }
 
 export function Input({
   inputName,
-  inputStateFunction,
+  handleInputChange,
   inputStateValue,
 }: InputType) {
   const [isOnlyNumbersError, setIsOnlyNumbersError] = useState(false);
 
-  const htmlForByName = inputName
+  const formattedInputName = inputName
     .toLocaleLowerCase()
     .match(/[a-zA-Z]/g)
     ?.join('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const isOnlyNumbers = e.target.value.match(/^[0-9]+$/) != null;
+    const isOnlyNumbers = e.target.value.match(/^[0-9,%]+$/) != null;
     if (!isOnlyNumbers && e.target.value !== '') {
       setIsOnlyNumbersError(true);
       return;
     }
     setIsOnlyNumbersError(false);
 
-    inputStateFunction(e.target.value);
+    handleInputChange(e.target.name, e.target.value);
   };
 
   return (
     <label
-      htmlFor={htmlForByName}
+      htmlFor={formattedInputName}
       className={isOnlyNumbersError ? styles.error : ''}
       content-text={`${inputName} deve ser um número`}
     >
       <p>{inputName}</p>
       <input
+        name={formattedInputName}
         type="text"
-        id={htmlForByName}
+        id={formattedInputName}
         value={inputStateValue}
         onChange={(e) => handleChange(e)}
       />

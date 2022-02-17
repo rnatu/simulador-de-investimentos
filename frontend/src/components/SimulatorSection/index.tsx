@@ -1,16 +1,48 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input } from '../Input';
 import { SimulatorOptions } from '../SimulatorOptions';
 import styles from './styles.module.scss';
+import { api } from '../../services/api';
+
+type InitialInputValuesType = {
+  data: Array<{
+    nome: string;
+    valor: number;
+  }>;
+};
 
 export function SimulatorCard() {
-  const [aporteInicial, setAporteInicial] = useState<string>('');
-  const [prazo, setPrazo] = useState<string>('');
-  const [ipca, setIpca] = useState<string>('');
-  const [aporteMensal, setAporteMensal] = useState<string>('');
-  const [rentabilidade, setRentabilidade] = useState<string>('');
-  const [cdi, setCdi] = useState<string>('');
+  const [inputValues, setInputValues] = useState({
+    aporteinicial: '',
+    prazoemmeses: '',
+    ipcaaoano: '',
+    aportemensal: '',
+    rentabilidade: '',
+    cdiaoano: '',
+  });
+
+  useEffect(() => {
+    (async function getInitialInputValues() {
+      try {
+        const { data }: InitialInputValuesType = await api.get('indicadores');
+
+        setInputValues((oldState) => ({
+          ...oldState,
+          cdiaoano: `${data[0].valor}%`,
+          ipcaaoano: `${data[1].valor}%`,
+        }));
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          alert(`${err.name}: ${err.message}`);
+        }
+      }
+    })();
+  }, []);
+
+  const handleInputChange = (inputName: string, inputValue: string) => {
+    setInputValues((oldState) => ({ ...oldState, [inputName]: inputValue }));
+  };
 
   return (
     <div className={styles.simulatorContainer}>
@@ -26,20 +58,20 @@ export function SimulatorCard() {
           <div className={styles.inputForm}>
             <Input
               inputName="Aporte Inicial"
-              inputStateFunction={setAporteInicial}
-              inputStateValue={aporteInicial}
+              handleInputChange={handleInputChange}
+              inputStateValue={inputValues.aporteinicial}
             />
 
             <Input
               inputName="Prazo (em meses)"
-              inputStateFunction={setPrazo}
-              inputStateValue={prazo}
+              handleInputChange={handleInputChange}
+              inputStateValue={inputValues.prazoemmeses}
             />
 
             <Input
               inputName="IPCA (ao ano)"
-              inputStateFunction={setIpca}
-              inputStateValue={ipca}
+              handleInputChange={handleInputChange}
+              inputStateValue={inputValues.ipcaaoano}
             />
           </div>
         </div>
@@ -54,20 +86,20 @@ export function SimulatorCard() {
           <div className={styles.inputForm}>
             <Input
               inputName="Aporte Mensal"
-              inputStateFunction={setAporteMensal}
-              inputStateValue={aporteMensal}
+              handleInputChange={handleInputChange}
+              inputStateValue={inputValues.aportemensal}
             />
 
             <Input
               inputName="Rentabilidade"
-              inputStateFunction={setRentabilidade}
-              inputStateValue={rentabilidade}
+              handleInputChange={handleInputChange}
+              inputStateValue={inputValues.rentabilidade}
             />
 
             <Input
               inputName="CDI (ao ano)"
-              inputStateFunction={setCdi}
-              inputStateValue={cdi}
+              handleInputChange={handleInputChange}
+              inputStateValue={inputValues.cdiaoano}
             />
           </div>
         </div>
