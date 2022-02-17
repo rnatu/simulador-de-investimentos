@@ -3,11 +3,15 @@ import styles from './styles.module.scss';
 
 interface InputType {
   inputName: string;
+  inputStateFunction: (value: string) => void;
+  inputStateValue: string;
 }
 
-export function Input({ inputName }: InputType) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [inputValue, setInputValue] = useState<string>('');
+export function Input({
+  inputName,
+  inputStateFunction,
+  inputStateValue,
+}: InputType) {
   const [isOnlyNumbersError, setIsOnlyNumbersError] = useState(false);
 
   const htmlForByName = inputName
@@ -15,15 +19,15 @@ export function Input({ inputName }: InputType) {
     .match(/[a-zA-Z]/g)
     ?.join('');
 
-  const handleChange = (eventValue: string) => {
-    const isOnlyNumbers = eventValue.match(/^[0-9]+$/) != null;
-    if (!isOnlyNumbers && eventValue !== '') {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isOnlyNumbers = e.target.value.match(/^[0-9]+$/) != null;
+    if (!isOnlyNumbers && e.target.value !== '') {
       setIsOnlyNumbersError(true);
-    } else {
-      setIsOnlyNumbersError(false);
+      return;
     }
+    setIsOnlyNumbersError(false);
 
-    setInputValue(eventValue);
+    inputStateFunction(e.target.value);
   };
 
   return (
@@ -36,8 +40,8 @@ export function Input({ inputName }: InputType) {
       <input
         type="text"
         id={htmlForByName}
-        value={inputValue}
-        onChange={(e) => handleChange(e.target.value)}
+        value={inputStateValue}
+        onChange={(e) => handleChange(e)}
       />
     </label>
   );

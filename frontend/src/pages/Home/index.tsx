@@ -13,9 +13,7 @@ export function Home() {
         <main className={styles.homeContent}>
           <SimulatorCard />
 
-          <div>
-            <SimulatorResultCard />
-          </div>
+          <SimulatorResultCard />
         </main>
       </div>
     </div>
