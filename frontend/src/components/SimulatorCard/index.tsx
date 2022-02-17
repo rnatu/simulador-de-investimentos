@@ -39,6 +39,10 @@ export function SimulatorCard() {
           </div>
         </div>
       </div>
+      <div className={styles.simulatorCardButtons}>
+        <button type="button">Limpar campos</button>
+        <button type="button">Simular</button>
+      </div>
     </div>
   );
 }

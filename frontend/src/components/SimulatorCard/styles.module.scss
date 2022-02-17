@@ -26,4 +26,42 @@
       margin-top: 2rem;
     }
   }
+
+  .simulatorCardButtons {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+
+    button {
+      flex: 1;
+      font-weight: 700;
+      padding: 1rem 0;
+      border-radius: 10px;
+
+      border: 1px solid black;
+
+      &:hover {
+        opacity: 80%;
+        transition: 0.2s;
+      }
+    }
+
+    button + button {
+      border-color: transparent;
+      background-color: #ed8e53;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .simulatorCardButtons {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
 }
