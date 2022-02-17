@@ -4,6 +4,9 @@
   .homeContainer {
     background-color: #efefef;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .homeHeader {
       text-align: center;
@@ -15,16 +18,19 @@
 
     .homeContent {
       margin-top: 4rem;
+
       display: flex;
+      justify-content: center;
       gap: 3rem;
+
+      width: 100%;
+      max-width: 1920px;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+
+        align-items: center;
+      }
     }
-  }
-}
-
-@media (max-width: 1024px) {
-  .homeContent {
-    flex-direction: column;
-
-    align-items: center;
   }
 }

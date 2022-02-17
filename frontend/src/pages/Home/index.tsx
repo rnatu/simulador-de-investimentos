@@ -1,4 +1,5 @@
-import { SimulatorCard } from '../../components/SimulatorCard';
+import { SimulatorCard } from '../../components/SimulatorSection';
+import { SimulatorResultCard } from '../../components/SimulatorResultSection';
 import styles from './styles.module.scss';
 
 export function Home() {
@@ -13,7 +14,7 @@ export function Home() {
           <SimulatorCard />
 
           <div>
-            <h2>Resultado da Simulação</h2>
+            <SimulatorResultCard />
           </div>
         </main>
       </div>

@@ -1,0 +1,21 @@
+.resultCard {
+  background-color: white;
+  text-align: center;
+  max-width: 12rem;
+
+  box-shadow: 0 0 4px 1px rgba(153, 153, 153, 0.548);
+  padding: 1rem 1rem;
+
+  p {
+    font-weight: 600;
+  }
+
+  span {
+    display: block;
+    margin-top: 1.2rem;
+  }
+
+  @media (max-width: 425px) {
+    width: 12rem;
+  }
+}

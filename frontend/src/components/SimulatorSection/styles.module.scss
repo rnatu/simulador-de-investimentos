@@ -1,6 +1,4 @@
 .simulatorContainer {
-  width: fit-content;
-
   h2 {
     font-weight: 700;
   }
@@ -53,15 +51,13 @@
       border-color: transparent;
       background-color: #ed8e53;
     }
-  }
-}
 
-@media (max-width: 375px) {
-  .simulatorCardButtons {
-    flex-direction: column;
+    @media (max-width: 375px) {
+      flex-direction: column;
 
-    button {
-      width: 100%;
+      button {
+        width: 100%;
+      }
     }
   }
 }

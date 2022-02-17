@@ -1,4 +1,4 @@
-import { Input } from '../input';
+import { Input } from '../Input';
 import { SimulatorOptions } from '../SimulatorOptions';
 import styles from './styles.module.scss';
 
