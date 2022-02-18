@@ -49,26 +49,6 @@ Code formatter/linting:
 
 ## ⚡ Como utilizar
 
-### 📦 Back-end
-
-#### Instalando Dependências
-
-```bash
-    # Instalar as dependências na pasta do back-end
-    $ npm install
-```
-
-#### Iniciando aplicação
-
-```bash
-    # Iniciando a aplicação
-    $ npx json-server db.json
-
-    # A aplicação será aberta na porta:3000 - Basta acessar: http://localhost:3000
-```
-
----
-
 ### 🎨 Front-end
 
 ## Instalando Dependências - Front-end
