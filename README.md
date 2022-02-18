@@ -1,5 +1,5 @@
 <h1 align="center">
-<img alig src="./public/assets/eqi-logo.svg" height="250px">
+<img alig src="./eqi-logo.svg" height="250px">
   <br>
   <br>
     DESAFIO TÉCNICO EQI – FRONT-END
