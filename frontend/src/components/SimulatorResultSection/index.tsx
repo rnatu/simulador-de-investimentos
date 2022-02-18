@@ -39,14 +39,14 @@ export function SimulatorResultCard() {
               isNetValue
             />
           </div>
-          <div>
+          <div className={styles.chart}>
             <p>Projeção de Valores</p>
           </div>
         </>
       )}
       {simulatorResult === null && (
-        <div>
-          <h1>Não foi encontrado nenhum resultado</h1>
+        <div className={styles.notFoundMessage}>
+          <h1>Desculpe, Não foi encontrado nenhum resultado</h1>
         </div>
       )}
     </div>

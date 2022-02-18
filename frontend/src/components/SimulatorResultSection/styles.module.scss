@@ -1,5 +1,13 @@
 .resultContainer {
-  flex: 1;
+  .notFoundMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    text-align: center;
+  }
+
   h2 {
     font-weight: 700;
   }
@@ -21,5 +29,10 @@
       grid-template-columns: 1fr;
       justify-items: center;
     }
+  }
+
+  .chart {
+    margin-top: 1.5rem;
+    font-weight: 600;
   }
 }
