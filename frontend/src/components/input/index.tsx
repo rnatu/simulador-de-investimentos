@@ -20,7 +20,7 @@ export function Input({
     ?.join('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const isOnlyNumbers = e.target.value.match(/^[0-9,%]+$/) != null;
+    const isOnlyNumbers = e.target.value.match(/^[0-9R$ ,/./%]+$/) != null;
     if (!isOnlyNumbers && e.target.value !== '') {
       setIsOnlyNumbersError(true);
       return;

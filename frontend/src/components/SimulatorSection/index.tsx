@@ -4,6 +4,7 @@ import { Input } from '../Input';
 import { SimulatorOptions } from '../SimulatorOptions';
 import styles from './styles.module.scss';
 import { api } from '../../services/api';
+import { useResult } from '../../hooks/useResult';
 
 type InitialInputValuesType = {
   data: Array<{
@@ -12,7 +13,9 @@ type InitialInputValuesType = {
   }>;
 };
 
-export function SimulatorCard() {
+export function SimulatorSection() {
+  const { setIncomeOption, setIndexingOption, handleSearchApiResult } =
+    useResult();
   const [inputValues, setInputValues] = useState({
     aporteinicial: '',
     prazoemmeses: '',
@@ -51,8 +54,9 @@ export function SimulatorCard() {
         <div>
           <SimulatorOptions
             title="Rendimento"
-            buttonsText={['Bruto', 'Líquido']}
+            buttonsTitle={['Bruto', 'Líquido']}
             defaultButton="Bruto"
+            handleOption={setIncomeOption}
           />
 
           <div className={styles.inputForm}>
@@ -79,8 +83,9 @@ export function SimulatorCard() {
         <div>
           <SimulatorOptions
             title="Tipos de indexação"
-            buttonsText={['PRÉ', 'POS', 'FIXADO']}
+            buttonsTitle={['PRÉ', 'POS', 'FIXADO']}
             defaultButton="POS"
+            handleOption={setIndexingOption}
           />
 
           <div className={styles.inputForm}>
@@ -106,7 +111,9 @@ export function SimulatorCard() {
       </div>
       <div className={styles.simulatorCardButtons}>
         <button type="button">Limpar campos</button>
-        <button type="button">Simular</button>
+        <button type="button" onClick={handleSearchApiResult}>
+          Simular
+        </button>
       </div>
     </div>
   );

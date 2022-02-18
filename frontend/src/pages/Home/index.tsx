@@ -1,4 +1,4 @@
-import { SimulatorCard } from '../../components/SimulatorSection';
+import { SimulatorSection } from '../../components/SimulatorSection';
 import { SimulatorResultCard } from '../../components/SimulatorResultSection';
 import styles from './styles.module.scss';
 
@@ -11,7 +11,7 @@ export function Home() {
         </header>
 
         <main className={styles.homeContent}>
-          <SimulatorCard />
+          <SimulatorSection />
 
           <SimulatorResultCard />
         </main>

@@ -5,19 +5,22 @@ import styles from './styles.module.scss';
 
 interface SimulatorOptionsType {
   title: string;
-  buttonsText: Array<string>;
+  buttonsTitle: Array<string>;
   defaultButton: string;
+  handleOption: (option: string) => void;
 }
 
 export function SimulatorOptions({
   title,
-  buttonsText,
+  buttonsTitle,
   defaultButton,
+  handleOption,
 }: SimulatorOptionsType) {
   const [buttonActive, setButtonActive] = useState<string>(defaultButton);
 
-  const handleActiveButton = (text: string) => {
-    setButtonActive(text);
+  const handleActiveButton = (option: string) => {
+    setButtonActive(option);
+    handleOption(option);
   };
 
   return (
@@ -30,10 +33,10 @@ export function SimulatorOptions({
       </div>
 
       <div className={styles.incomeButtonSection}>
-        {buttonsText.map((button) => (
+        {buttonsTitle.map((button) => (
           <OptionButton
             key={button}
-            text={button}
+            buttonTitle={button}
             handleActiveButton={handleActiveButton}
             buttonActive={buttonActive}
           />

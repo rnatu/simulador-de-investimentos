@@ -1,13 +1,13 @@
 import styles from './styles.module.scss';
 
 interface OptionButtonType {
-  text: string;
+  buttonTitle: string;
   handleActiveButton: (text: any) => void;
   buttonActive: string | null;
 }
 
 export function OptionButton({
-  text,
+  buttonTitle,
   handleActiveButton,
   buttonActive,
 }: OptionButtonType) {
@@ -15,11 +15,11 @@ export function OptionButton({
     <button
       type="button"
       className={`${styles.optionButton} ${
-        buttonActive === text && styles.active
+        buttonActive === buttonTitle && styles.active
       }`}
-      onClick={() => handleActiveButton(text)}
+      onClick={() => handleActiveButton(buttonTitle)}
     >
-      {text}
+      {buttonTitle}
     </button>
   );
 }

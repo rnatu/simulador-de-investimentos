@@ -1,30 +1,54 @@
 import styles from './styles.module.scss';
 
 import { ResultValuesCard } from '../ResultValuesCard';
+import { useResult } from '../../hooks/useResult';
 
 export function SimulatorResultCard() {
+  const { simulatorResult } = useResult();
+
   return (
     <div className={styles.resultContainer}>
-      <h2>Resultado da Simulação</h2>
-      <div className={styles.resultContent}>
-        <ResultValuesCard title="Valor final bruto" value="R$ 15.509,27" />
-        <ResultValuesCard title="Alíquota do IR" value="20%" />
-        <ResultValuesCard title="Valor Pago em IR" value="R$ 1.509,27" />
-        <ResultValuesCard
-          title="Valor Final Líquido"
-          value="R$ 56.509,27"
-          isNetValue
-        />
-        <ResultValuesCard title="Valor Total Investido" value="R$ 9.509,27" />
-        <ResultValuesCard
-          title="Ganho Líquido"
-          value="R$ 47.000,00"
-          isNetValue
-        />
-      </div>
-      <div>
-        <p>Projeção de Valores</p>
-      </div>
+      {simulatorResult && (
+        <>
+          <h2>Resultado da Simulação</h2>
+          <div className={styles.resultContent}>
+            <ResultValuesCard
+              title="Valor final bruto"
+              value={simulatorResult.valorFinalBruto}
+            />
+            <ResultValuesCard
+              title="Alíquota do IR"
+              value={simulatorResult.aliquotaDoIR}
+            />
+            <ResultValuesCard
+              title="Valor Pago em IR"
+              value={simulatorResult.valorPagoEmIR}
+            />
+            <ResultValuesCard
+              title="Valor Final Líquido"
+              value={simulatorResult.valorFinalLiquido}
+              isNetValue
+            />
+            <ResultValuesCard
+              title="Valor Total Investido"
+              value={simulatorResult.valorTotalInvestido}
+            />
+            <ResultValuesCard
+              title="Ganho Líquido"
+              value={simulatorResult.ganhoLiquido}
+              isNetValue
+            />
+          </div>
+          <div>
+            <p>Projeção de Valores</p>
+          </div>
+        </>
+      )}
+      {simulatorResult === null && (
+        <div>
+          <h1>Não foi encontrado nenhum resultado</h1>
+        </div>
+      )}
     </div>
   );
 }
