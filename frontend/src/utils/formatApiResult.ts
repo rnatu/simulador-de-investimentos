@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ApiDataType } from '../types/index';
 import formatCurrency from './formatCurrency';
 

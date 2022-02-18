@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+<h1 align="center">
+<img alig src="./public/assets/eqi-logo.svg" height="250px">
+  <br>
+  <br>
+    DESAFIO TÉCNICO EQI – FRONT-END
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">
+  Criando um Simulador de Investimentos com ReactJS/Typescript
+</h4>
 
-## Available Scripts
+<p align="center">
+  <a href="https://www.linkedin.com/in/rnatu/">
+    <img alt="Made By" src="https://img.shields.io/static/v1?label=Made%20By&message=Renato%20Xavier&color=6C4FBB&style=for-the-badge">
+  </a>
+</p>
 
-In the project directory, you can run:
+<p align="center">
+Nesse desafio, criei uma aplicação front-end de um simulador de investimentos
+</p>
 
-### `yarn start`
+<p align="center">
+  <a href="#-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias-utilizadas">Tecnologias utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Como-utilizar">Como utilizar</a>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📜 Sobre o projeto
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Nesta aplicação o meu principal objetivo foi criar um simulador de investimentos utilizando fornecidos por uma API, criando a interface através de um layout previamente enviado, buscando deixar o mais próximo possível.
 
-### `yarn test`
+### Funcionalidades Adicionais
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- TypeScript
+- Design adaptado para responsividade
+- Boas Práticas de SEO e acessibilidade.
 
-### `yarn build`
+## 🚀 Tecnologias utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [ReactJS](https://pt-br.reactjs.org/)
+  - [SASS](https://sass-lang.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [axios](https://github.com/axios/axios)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Code formatter/linting:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [esLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
-### `yarn eject`
+## ⚡ Como utilizar
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 📦 Back-end
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Instalando Dependências
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+    # Instalar as dependências na pasta do back-end
+    $ npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Iniciando aplicação
 
-## Learn More
+```bash
+    # Iniciando a aplicação
+    $ npx json-server db.json
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    # A aplicação será aberta na porta:3000 - Basta acessar: http://localhost:3000
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+### 🎨 Front-end
+
+## Instalando Dependências - Front-end
+
+```bash
+    # Instalar as dependências na pasta do front-end
+    $ yarn
+```
+
+## Iniciando aplicação - Front-end
+
+```bash
+    # Iniciando aplicação
+    $ yarn start
+
+    # A aplicação será aberta na porta:3006 - Basta acessar: http://localhost:3006
+```
+
+<h4 align="center">
+    Made with 💜 by Renato Xavier
+</h4>

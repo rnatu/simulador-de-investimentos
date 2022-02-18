@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 
 interface OptionButtonType {
   buttonTitle: string;
-  handleActiveButton: (text: any) => void;
+  handleActiveButton: (optionTitle: string) => void;
   buttonActive: string | null;
 }
 
