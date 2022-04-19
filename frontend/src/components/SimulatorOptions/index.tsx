@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { OptionButton } from '../OptionButtons';
+import { OptionButton } from '../OptionButton';
 import { SimulatorHeaderInfo } from '../SimulatorHeaderInfo';
 import styles from './styles.module.scss';
 

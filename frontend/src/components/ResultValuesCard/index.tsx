@@ -6,8 +6,6 @@ interface ResultValuesCardProps {
   isNetValue?: boolean;
 }
 
-// style={{ color: 'green' }}
-
 export function ResultValuesCard({
   title,
   value,
